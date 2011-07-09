@@ -1,0 +1,11 @@
+This is a simple Python wrapper to fetch game and player details
+from a Steam Community page.
+
+Pass in a Steam Community page ID (either numeric, or the custom URL)
+and it will spit out data that it knows about.
+
+See: http://developer.valvesoftware.com/wiki/Steam_Web_API
+for a listing of the public/private fields that are exposed.
+
+This correctly uses profiles which have custom URLs and ones which do
+not (default 17 digit ID).
