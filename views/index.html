@@ -9,7 +9,7 @@
   <p>Hello, {{ nickname }}! | <a href="/logout">Logout (Destroys Steam login as well)</a></p>
 
   {% if not details %}
-  <p><a href="https://steamcommunity.com/openid/login?openid.ns=http://specs.openid.net/auth/2.0&amp;openid.mode=checkid_setup&amp;openid.return_to=http://nowplayingonsteam.appspot.com/steamlogin&amp;openid.realm=http://nowplayingonsteam.appspot.com/&amp;openid.identity=http://specs.openid.net/auth/2.0/identifier_select&amp;openid.claimed_id=http://specs.openid.net/auth/2.0/identifier_select"><img src="/assets/images/steam_signin.png" /></a></p>
+  <p><a href="https://steamcommunity.com/openid/login?openid.ns=http://specs.openid.net/auth/2.0&amp;openid.mode=checkid_setup&amp;openid.return_to={{url}}steamlogin&amp;openid.realm={{url}}&amp;openid.identity=http://specs.openid.net/auth/2.0/identifier_select&amp;openid.claimed_id=http://specs.openid.net/auth/2.0/identifier_select"><img src="/assets/images/steam_signin.png" /></a></p>
   {% endif %}
 
   <!--

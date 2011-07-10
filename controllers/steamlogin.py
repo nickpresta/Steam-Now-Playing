@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import os
+import logging
 
 from utils.getnowplaying import SteamUserDataFetcher
 
@@ -23,6 +24,6 @@ class SteamLoginHandler(webapp.RequestHandler):
     if fetcher.isValidId64(user_id):
       session['profile_id'] = user_id
     else:
-      session['profile_id'] = None
+      logging.warning("Steam ID: %s" % user_id)
 
     self.redirect('/')

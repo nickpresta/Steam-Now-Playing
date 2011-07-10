@@ -24,6 +24,7 @@ class LogoutHandler(webapp.RequestHandler):
 class MainHandler(webapp.RequestHandler):
   """Renders the main page, prompts for Steam ID"""
   def get(self):
+    url = self.request.url
     user = users.get_current_user()
     session = get_current_session()
 
@@ -39,5 +40,6 @@ class MainHandler(webapp.RequestHandler):
         template.render(path, {
           'nickname': user.nickname(),
           'details': details,
+          'url': url,
           })
         )
