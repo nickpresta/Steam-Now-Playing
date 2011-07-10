@@ -1,0 +1,49 @@
+<!html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/assets/css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Now Playing On Steam!</h1>
+  </header>
+  <p>Hello, {{ nickname }}! | <a href="/logout">Logout (Destroys Steam login as well)</a></p>
+
+  {% if not details %}
+  <p><a href="https://steamcommunity.com/openid/login?openid.ns=http://specs.openid.net/auth/2.0&amp;openid.mode=checkid_setup&amp;openid.return_to=http://nowplayingonsteam.appspot.com/steamlogin&amp;openid.realm=http://nowplayingonsteam.appspot.com/&amp;openid.identity=http://specs.openid.net/auth/2.0/identifier_select&amp;openid.claimed_id=http://specs.openid.net/auth/2.0/identifier_select"><img src="/assets/images/steam_signin.png" /></a></p>
+  {% endif %}
+
+  <!--
+  <form action="/steamid" method="post">
+    <p>Please enter your Steam Profile ID. I'm only interested in the ID part (see: example below)</p>
+    <p><label for="steamid">Steam ID</label>:
+    <input type="text" name="steamid" id="steamid" placeholder="http://steamcommunity.com/id/example"
+    {% spaceless %}
+    {% if details %}
+    value="{{ input }}"
+    {% endif %}
+    {% endspaceless %}
+    /></p>
+    <p><input type="submit" /></p>
+  </form>
+  -->
+
+  {% if details %}
+  <h2>Steam Details for {{ details.steamID }}</h2>
+  <table>
+    <tr>
+      <th>Setting</th>
+      <th>Value</th>
+    </tr>
+    {% for key,value in details.items %}
+    <tr>
+      <td>{{ key }}</td>
+      <td>{{ value }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+  <footer>
+  <p>Powered by <a href="http://steampowered.com">Steam</a>.</p>
+  </footer>
+</body>
+</html>

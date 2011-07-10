@@ -1,11 +1,9 @@
-This is a simple Python wrapper to fetch game and player details
-from a Steam Community page.
+A Google App Engine project that fetches your Steam user information:
 
-Pass in a Steam Community page ID (either numeric, or the custom URL)
-and it will spit out data that it knows about.
+  * Your display name
+  * Your current activity (currently playing, offline stats, etc)
+  * Details about the game you're playing (Server, Icon, etc)
 
-See: http://developer.valvesoftware.com/wiki/Steam_Web_API
-for a listing of the public/private fields that are exposed.
-
-This correctly uses profiles which have custom URLs and ones which do
-not (default 17 digit ID).
+This project allows you to login via your Google account and then
+allows you to securely login through the Steam Community site to fetch
+your data. No need to find your profile ID, or anything else.
